@@ -3,7 +3,7 @@ package com.example.jave2demo;
 import ws.schild.jave.process.ProcessWrapper;
 import ws.schild.jave.process.ffmpeg.DefaultFFMPEGLocator;
 
-public class Test {
+public class TestDefaultFFMPEGLocator {
 
     public static final String INPUT = "G:\\ffmpeg\\input.mp4";
     public static final String OUTPUT = "G:\\ffmpeg\\output.avi";
