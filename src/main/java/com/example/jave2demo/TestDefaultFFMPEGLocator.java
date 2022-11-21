@@ -13,6 +13,13 @@ public class TestDefaultFFMPEGLocator {
         ProcessWrapper localFFMPEG = locator.createExecutor();
         localFFMPEG.addArgument("-i");
         localFFMPEG.addArgument(INPUT);
+        localFFMPEG.addArgument("-vb");
+        localFFMPEG.addArgument("19000");
+        localFFMPEG.addArgument("-movflags");
+        localFFMPEG.addArgument("faststart");
+        localFFMPEG.addArgument("-f");
+        localFFMPEG.addArgument("mp4");
+        localFFMPEG.addArgument("-y");
         localFFMPEG.addArgument(OUTPUT);
         try {
             localFFMPEG.execute();
