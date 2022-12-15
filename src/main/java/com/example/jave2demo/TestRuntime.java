@@ -11,13 +11,19 @@ public class TestRuntime {
         String cmd = locator.getExecutablePath() +
 //                " -i /Users/videopls/develop/ffmpeg/input.avi -c:v libx264 -c:a aac -strict -2 -f hls -hls_list_size 2 -hls_time 15 /Users/videopls/develop/ffmpeg/m3u8out/output.m3u8";
 
-        " -i /Users/videopls/develop/ffmpeg/input.avi -vf fps=1/1  /Users/videopls/develop/ffmpeg/input.avi.%d.jpg";
+//        " -i /Users/videopls/develop/ffmpeg/input.avi -vf fps=1/1  /Users/videopls/develop/ffmpeg/input.avi.%d.jpg";
 
+
+
+
+" -i /Users/videopls/develop/ffmpeg/input.avi -vcodec libx264 -preset ultrafast -b:v 2000k /Users/videopls/develop/ffmpeg/ooo.avi";
         System.out.println("cmd======"+cmd);
         try {
             Runtime runtime = Runtime.getRuntime();
             Process process = runtime.exec(cmd);
-//            Process p=Runtime.getRuntime().exec(command1);
+
+            ProcessHandler.dealStream(process);
+
             process.waitFor();
         }catch (IOException ioe){
             throw ioe;
