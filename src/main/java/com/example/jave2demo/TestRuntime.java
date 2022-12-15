@@ -8,15 +8,15 @@ public class TestRuntime {
 
     public static void main(String[] args) throws Exception {
         DefaultFFMPEGLocator locator = new DefaultFFMPEGLocator();
+        String input = "/Users/videopls/develop/ffmpeg/input.avi";
+        String ouyput = "/Users/videopls/develop/ffmpeg/ooo.avi";
         String cmd = locator.getExecutablePath() +
 //                " -i /Users/videopls/develop/ffmpeg/input.avi -c:v libx264 -c:a aac -strict -2 -f hls -hls_list_size 2 -hls_time 15 /Users/videopls/develop/ffmpeg/m3u8out/output.m3u8";
 
 //        " -i /Users/videopls/develop/ffmpeg/input.avi -vf fps=1/1  /Users/videopls/develop/ffmpeg/input.avi.%d.jpg";
 
 
-
-
-" -i /Users/videopls/develop/ffmpeg/input.avi -vcodec libx264 -preset ultrafast -b:v 2000k /Users/videopls/develop/ffmpeg/ooo.avi";
+                " -i " + ouyput + " -vcodec libx264 -preset ultrafast -b:v 2000k " + ouyput;
         System.out.println("cmd======"+cmd);
         try {
             Runtime runtime = Runtime.getRuntime();
